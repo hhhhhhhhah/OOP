@@ -1,14 +1,14 @@
 //
-// Created by ayy on 11/8/16.
-//
 #include "Hexagon.h"
-#include <iostream>
-#include <math.h>
 
-Hexagon::Hexagon() : Hexagon(0){}
+#include <iostream>
+#include <cmath>
+
+Hexagon::Hexagon() : Hexagon(0) {
+}
 
 Hexagon::Hexagon(size_t i) : side(i) {
-    std::cout << "Hexagon created: side = " << side << std::endl;
+    std::cout << "Hexagon created: " << side <<  std::endl;
 }
 
 Hexagon::Hexagon(const Hexagon& orig) {
@@ -16,13 +16,12 @@ Hexagon::Hexagon(const Hexagon& orig) {
     side = orig.side;
 }
 
-double Hexagon::Square() {
-    return 3.0 * sqrt(3.0) * side / 2.0;
+double Hexagon::Square(){
+    return ((3.0 * sqrt(3.0) * side * side )/ 2.0);
 }
 
-Hexagon& Hexagon::operator=(const Hexagon &right) {
-    if(this == &right) return *this;
-
+Hexagon& Hexagon::operator=(const Hexagon& right) {
+    if (this == &right) return *this;
     std::cout << "Hexagon copied" << std::endl;
     side = right.side;
     return *this;
@@ -33,7 +32,7 @@ Hexagon& Hexagon::operator++() {
     return *this;
 }
 
-Hexagon operator+(const Hexagon &left, const Hexagon &right) {
+Hexagon operator+(const Hexagon& left,const Hexagon& right) {
     return Hexagon(left.side + right.side);
 }
 
@@ -41,12 +40,12 @@ Hexagon::~Hexagon() {
     std::cout << "Hexagon deleted" << std::endl;
 }
 
-std::ostream& operator << (std::ostream os, const Hexagon& hexagon) {
-    os << "side = " << hexagon.side << std::endl;
+std::ostream& operator<<(std::ostream& os, const Hexagon& obj) {
+    os << "a=" << obj.side << std::endl;
     return os;
 }
 
-std::istream& operator >> (std::istream is, Hexagon& hexagon) {
-    is >> hexagon.side;
+std::istream& operator>>(std::istream& is, Hexagon& obj) {
+    is >> obj.side;
     return is;
 }
