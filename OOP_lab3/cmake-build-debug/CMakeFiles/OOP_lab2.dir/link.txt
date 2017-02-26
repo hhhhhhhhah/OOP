@@ -1,0 +1,1 @@
+/usr/bin/c++    -std=c++11 -g   CMakeFiles/OOP_lab2.dir/main.cpp.o CMakeFiles/OOP_lab2.dir/Hexagon.cpp.o CMakeFiles/OOP_lab2.dir/NTreeNode.cpp.o CMakeFiles/OOP_lab2.dir/NTree.cpp.o CMakeFiles/OOP_lab2.dir/Triangle.cpp.o CMakeFiles/OOP_lab2.dir/Octagon.cpp.o  -o OOP_lab2 

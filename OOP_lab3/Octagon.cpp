@@ -13,6 +13,13 @@ Octagon::Octagon(const Octagon orig): {
     side = orig.side;
 }
 
+Octagon& Octagon::operator=(const Octagon& right){
+    if(this == &right) return *this;
+    std::cout << "Octagon copied" << std::endl;
+    this->side=right.side;
+    return *this;
+}
+
 double Octagon::Square() {
     return (2*(1+sqrt(2))*side*side);
 }

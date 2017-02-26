@@ -1,5 +1,6 @@
 #include "Triangle.h"
 #include <iostream>
+#include <cmath>
 
 Triangle::Triangle() : Triangle(0, 0, 0) {
     std::cout << "Triangle created: default" << std::endl;
@@ -14,6 +15,11 @@ Triangle::Triangle(const Triangle& orig) {
     side_a = orig.side_a;
     side_b = orig.side_b;
     side_c = orig.side_c;
+}
+
+double Triangle::Square() {
+    double p = (side_a + side_b + side_c)/2.0;
+    return sqrt(p * (p-side_a) * (p-side_b) * (p-side_c));
 }
 
 Triangle& Triangle::operator=(const Triangle& right) {

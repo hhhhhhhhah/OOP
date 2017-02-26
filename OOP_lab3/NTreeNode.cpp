@@ -1,36 +1,37 @@
 #include "NTreeNode.h"
 #include <iostream>
 
-NTreeNode::NTreeNode(const Hexagon& hexagon):hexagon(hexagon) {
+NTreeNode::NTreeNode(const std::shared_ptr<Hexagon>& hexagon): {
+    this->hexagon = hexagon;
     this->child = nullptr;
     this->sibling = nullptr;
     this->parent = nullptr;
 }
 
-NTreeNode* NTreeNode::GetChild() {
+std::shared_ptr<NTreeNode> NTreeNode::GetChild() {
     return this->child;
 }
-NTreeNode* NTreeNode::GetParent() {
+std::shared_ptr<NTreeNode> NTreeNode::GetParent() {
     return this->parent;
 }
-NTreeNode* NTreeNode::GetSibling() {
+std::shared_ptr<NTreeNode> NTreeNode::GetSibling() {
     return this->sibling;
 }
 
-void NTreeNode::SetChild(NTreeNode* child) {
+void NTreeNode::SetChild(std::shared_ptr<NTreeNode> child) {
     this->child = child;
 }
-void NTreeNode::SetParent(NTreeNode* parent) {
+void NTreeNode::SetParent(std::shared_ptr<NTreeNode> parent) {
     this->parent = parent;
 }
-void NTreeNode::SetSibling(NTreeNode* sibling) {
+void NTreeNode::SetSibling(std::shared_ptr<NTreeNode> sibling) {
     this->sibling = sibling;
 }
 void NTreeNode::SetHexagon(Hexagon hexagon) {
-    this->hexagon = hexagon;
+    this->hexagon = std::shared_ptr<Hexagon> hexagon;
 }
 Hexagon NTreeNode::GetHexagon() const {
-    return this->hexagon;
+    return this->&hexagon;
 }
 
 
