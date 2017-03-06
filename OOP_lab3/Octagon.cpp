@@ -8,7 +8,7 @@ Octagon::Octagon(size_t i): side(i) {
     std::cout << "Octagon created: " << side <<  std::endl;
 }
 
-Octagon::Octagon(const Octagon orig): {
+Octagon::Octagon(const Octagon& orig) {
     std::cout << "Octagon copy created" <<  std::endl;
     side = orig.side;
 }

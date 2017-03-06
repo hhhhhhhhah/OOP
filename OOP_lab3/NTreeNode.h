@@ -22,7 +22,7 @@ public:
     void SetSibling(std::shared_ptr<NTreeNode> sibling);
     void SetFigure(std::shared_ptr<Figure> figure);
 
-    Figure GetFigure() const;
+    std::shared_ptr<Figure> GetFigure() const;
 
     virtual ~NTreeNode();
 

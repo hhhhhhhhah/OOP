@@ -1,7 +1,7 @@
 #include "NTreeNode.h"
 #include <iostream>
 
-NTreeNode::NTreeNode(const std::shared_ptr<Figure>& figure): {
+NTreeNode::NTreeNode(const std::shared_ptr<Figure>& figure) {
     this->figure = figure;
     this->child = nullptr;
     this->sibling = nullptr;
@@ -30,13 +30,13 @@ void NTreeNode::SetSibling(std::shared_ptr<NTreeNode> sibling) {
 void NTreeNode::SetFigure(std::shared_ptr<Figure> figure) {
     this->figure = figure;
 }
-Figure NTreeNode::GetFigure() const {
-    return this->&figure;
+std::shared_ptr<Figure> NTreeNode::GetFigure() const {
+    return figure;
 }
 
 
 NTreeNode::~NTreeNode() {
-    delete sibling;
+    sibling = nullptr;
 }
 
 void NTreeNode::print(int indent) {

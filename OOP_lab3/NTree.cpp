@@ -16,7 +16,7 @@ void NTree::DeleteNode(char *path) {
     std::shared_ptr<NTreeNode> parent;
     node = this->FindNode(path);
     if (node == this->root) {
-        delete root;
+//        delete root;
         root = nullptr;
         return;
     }
@@ -34,7 +34,7 @@ void NTree::DeleteNode(char *path) {
     if (parent->GetChild() == node) {
     parent->SetChild(node->GetSibling());}
     node->SetSibling(nullptr);
-    delete node;
+    node = nullptr;
 }
 
 void NTree::AddNode(const std::shared_ptr<Figure> &figure, char *path) {
@@ -43,7 +43,8 @@ void NTree::AddNode(const std::shared_ptr<Figure> &figure, char *path) {
     if (path[0] == '0') {
         if (path[1] == '\0') {
             if (root == nullptr) {
-                root = new NTreeNode(figure);
+                std::shared_ptr<NTreeNode> node(new NTreeNode(figure));
+                root = node;
             }
             else {
                 root->SetFigure(figure);
@@ -88,7 +89,8 @@ void NTree::AddNode(const std::shared_ptr<Figure> &figure, char *path) {
         node->SetFigure(figure);
     }
     else {
-        node = new NTreeNode(figure);
+        std::shared_ptr<NTreeNode> newNode(new NTreeNode(figure));
+        node = newNode;
         if (path[i - 1] == '1') {
             node1->SetChild(node);
             node->SetParent(node1);
@@ -148,5 +150,5 @@ bool NTree::empty() {
 }
 
 NTree::~NTree() {
-    delete root;
+    root = nullptr;
 }

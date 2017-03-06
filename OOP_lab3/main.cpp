@@ -31,26 +31,45 @@ int main(int argc, char** argv) {
                         std::cout << "Enter size(3 numbers): ";
                         int a,b,c;
                         std::cin >> a >> b >> c;
-                        //Triangle triangle(a,b,c);
-                        nTree.AddNode(std::shared_ptr<Triangle>(Triangle triangle(a,b,c)));
+                        std::shared_ptr<Figure> figure(new Triangle(a, b, c));
+                        nTree.AddNode(figure, path);
+                        std::cout << "Triangle's area = " << figure->Square() << std::endl;
+                        break;
+                    }
+                    case 2: {
+                        std::cout << "Enter size: ";
+                        int a;
+                        std::cin >> a;
+                        std::shared_ptr<Figure> figure(new Hexagon(a));
+                        nTree.AddNode(figure, path);
+                        std::cout << "Hexagon's area = " << figure->Square() << std::endl;
+                        break;
+                    }
+                    case 3: {
+                        std::cout << "Enter size: ";
+                        int a;
+                        std::cin >> a;
+                        std::shared_ptr<Figure> figure(new Octagon(a));
+                        nTree.AddNode(figure, path);
+                        std::cout << "Octagon's area = " << figure->Square() << std::endl;
+                        break;
+                    }
+                    default: {
+                        std::cout << "Wrong number." << std::endl;
+                        break;
                     }
                 }
-                std::cout << "Enter size: ";
-                int a;
-                std::cin >> a;
-                Hexagon hexagon(a);
-                nTree.AddNode(hexagon, path);
-                std::cout << "Hexagon's area = " << hexagon.Square() << std::endl;
-                break;
             }
             case 2: {
                 std::cout << "Enter path: ";
                 std::cin >> path;
                 node = nTree.FindNode(path);
                 if (node != nullptr) {
-                    Hexagon hexagon(node->GetFigure());
-                    std::cout << hexagon << std::endl;
-                    std::cout << "Hexagon's area = " << hexagon.Square() << std::endl;
+                    //Hexagon hexagon(node->GetFigure());
+                    std::cout << node->GetChild() << std::endl;
+                    std::cout << "Figure's area = " << node->GetChild()->GetFigure()->Square() << std::endl;
+                    //std::cout << hexagon << std::endl;
+                    //std::cout << "Hexagon's area = " << hexagon.Square() << std::endl;
                 } else {
                     std::cout << "Wrong path." << std::endl;
                 }
@@ -84,9 +103,9 @@ int main(int argc, char** argv) {
 
 void PrintMenu() {
     std::cout << "----------------MENU----------------" << std::endl;
-    std::cout << "| 1 - Push hexagon                 |" << std::endl;
-    std::cout << "| 2 - Get hexagon                  |" << std::endl;
-    std::cout << "| 3 - Delete hexagon               |" << std::endl;
+    std::cout << "| 1 - Push Figure                  |" << std::endl;
+    std::cout << "| 2 - Get Figure                   |" << std::endl;
+    std::cout << "| 3 - Delete Figure                |" << std::endl;
     std::cout << "| 4 - Check if tree is empty       |" << std::endl;
     std::cout << "| 5 - Print tree                   |" << std::endl;
     std::cout << "| 6 - Quit                         |" << std::endl;
