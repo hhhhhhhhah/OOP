@@ -2,6 +2,8 @@
 #include <iostream>
 #include <string>
 #include "Hexagon.h"
+#include "Triangle.h"
+#include "Octagon.h"
 #include "NTreeNode.h"
 #include "NTree.h"
 
@@ -9,7 +11,7 @@ void PrintMenu();
 
 int main(int argc, char** argv) {
     char path[32];
-    NTreeNode *node;
+    std::shared_ptr<NTreeNode> node;
     NTree nTree;
 
     while (1) {
@@ -21,6 +23,18 @@ int main(int argc, char** argv) {
             case 1: {
                 std::cout << "Enter path: ";
                 std::cin >> path;
+                std::cout << "Enter type of figure (1 - triangle, 2 - hexagon, 3 - octagon): ";
+                int tof;
+                std::cin >> tof;
+                switch (tof){
+                    case 1: {
+                        std::cout << "Enter size(3 numbers): ";
+                        int a,b,c;
+                        std::cin >> a >> b >> c;
+                        //Triangle triangle(a,b,c);
+                        nTree.AddNode(std::shared_ptr<Triangle>(Triangle triangle(a,b,c)));
+                    }
+                }
                 std::cout << "Enter size: ";
                 int a;
                 std::cin >> a;
@@ -34,7 +48,7 @@ int main(int argc, char** argv) {
                 std::cin >> path;
                 node = nTree.FindNode(path);
                 if (node != nullptr) {
-                    Hexagon hexagon(node->GetHexagon());
+                    Hexagon hexagon(node->GetFigure());
                     std::cout << hexagon << std::endl;
                     std::cout << "Hexagon's area = " << hexagon.Square() << std::endl;
                 } else {

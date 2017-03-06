@@ -12,15 +12,15 @@ NTree::NTree(const NTree& orig) {
 }
 
 void NTree::DeleteNode(char *path) {
-    NTreeNode *node;
-    NTreeNode *parent;
+    std::shared_ptr<NTreeNode> node;
+    std::shared_ptr<NTreeNode> parent;
     node = this->FindNode(path);
     if (node == this->root) {
         delete root;
         root = nullptr;
         return;
     }
-    std::cout<<node->GetHexagon()<<std::endl;
+    std::cout<<node->GetFigure()<<std::endl;
 
         int i = 0;
         while (path[i] != '\0') {
@@ -37,16 +37,16 @@ void NTree::DeleteNode(char *path) {
     delete node;
 }
 
-void NTree::AddNode(Hexagon hexagon, char *path) {
+void NTree::AddNode(const std::shared_ptr<Figure> &figure, char *path) {
     int i = 0, j;
-    NTreeNode *node = root, *node1 = root;
+    std::shared_ptr<NTreeNode> node = root, node1 = root;
     if (path[0] == '0') {
         if (path[1] == '\0') {
             if (root == nullptr) {
-                root = new NTreeNode(hexagon);
+                root = new NTreeNode(figure);
             }
             else {
-                root->SetHexagon(hexagon);
+                root->SetFigure(figure);
             }
         }
         else {
@@ -85,10 +85,10 @@ void NTree::AddNode(Hexagon hexagon, char *path) {
         ++i;
     }
     if (node != nullptr) {
-        node->SetHexagon(hexagon);
+        node->SetFigure(figure);
     }
     else {
-        node = new NTreeNode(hexagon);
+        node = new NTreeNode(figure);
         if (path[i - 1] == '1') {
             node1->SetChild(node);
             node->SetParent(node1);
@@ -105,9 +105,9 @@ std::ostream& operator<<(std::ostream& os, const NTree& tree) {
     return os;
 }
 
-NTreeNode* NTree::FindNode(char* path) {
+std::shared_ptr<NTreeNode> NTree::FindNode(char* path) {
     int i = 0, j;
-    NTreeNode *node = root;
+    std::shared_ptr<NTreeNode> node = root;
     if (path[0] == '0') {
         return root;
     }

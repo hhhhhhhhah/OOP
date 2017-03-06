@@ -13,13 +13,13 @@ public:
     NTree();
     NTree(const NTree& orig);
     void DeleteNode(char *path);
-    void AddNode(Hexagon hexagon, char *path);
+    void AddNode(const std::shared_ptr<Figure> &figure, char *path);
     friend std::ostream& operator<<(std::ostream& os, const NTree& tree);
-    NTreeNode* FindNode(char* path);
+    std::shared_ptr<NTreeNode> FindNode(char* path);
     bool empty();
     virtual ~NTree();
 private:
-    NTreeNode *root;
+    std::shared_ptr<NTreeNode> root;
 };
 
 

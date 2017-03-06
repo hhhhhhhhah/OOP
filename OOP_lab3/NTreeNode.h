@@ -9,7 +9,7 @@
 #include "Hexagon.h"
 class NTreeNode {
 public:
-    NTreeNode(const std::shared_ptr<Hexagon>& octagon);
+    NTreeNode(const std::shared_ptr<Figure>& figure);
     friend std::ostream& operator<<(std::ostream& os, const NTreeNode& obj);
     void print(int indent);
 
@@ -20,14 +20,14 @@ public:
     void SetChild(std::shared_ptr<NTreeNode> child);
     void SetParent(std::shared_ptr<NTreeNode> parent);
     void SetSibling(std::shared_ptr<NTreeNode> sibling);
-    void SetHexagon(Hexagon hexagon);
+    void SetFigure(std::shared_ptr<Figure> figure);
 
-    Hexagon GetHexagon() const;
+    Figure GetFigure() const;
 
     virtual ~NTreeNode();
 
 private:
-    std::shared_ptr<Hexagon> hexagon;
+    std::shared_ptr<Figure> figure;
     std::shared_ptr<NTreeNode> parent;
     std::shared_ptr<NTreeNode> child;
     std::shared_ptr<NTreeNode> sibling;
