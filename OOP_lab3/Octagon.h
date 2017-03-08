@@ -9,7 +9,7 @@
 #include <cstdlib>
 #include <iostream>
 
-class Octagon: Figure {
+class Octagon: public Figure {
 public:
     Octagon();
     Octagon(size_t i);

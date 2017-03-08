@@ -33,7 +33,7 @@ int main(int argc, char** argv) {
                         std::cin >> a >> b >> c;
                         std::shared_ptr<Figure> figure(new Triangle(a, b, c));
                         nTree.AddNode(figure, path);
-                        std::cout << "Triangle's area = " << figure->Square() << std::endl;
+                        //std::cout << "Triangle's area = " << figure->Square() << std::endl;
                         break;
                     }
                     case 2: {
@@ -42,7 +42,7 @@ int main(int argc, char** argv) {
                         std::cin >> a;
                         std::shared_ptr<Figure> figure(new Hexagon(a));
                         nTree.AddNode(figure, path);
-                        std::cout << "Hexagon's area = " << figure->Square() << std::endl;
+                        //std::cout << "Hexagon's area = " << figure->Square() << std::endl;
                         break;
                     }
                     case 3: {
@@ -51,7 +51,7 @@ int main(int argc, char** argv) {
                         std::cin >> a;
                         std::shared_ptr<Figure> figure(new Octagon(a));
                         nTree.AddNode(figure, path);
-                        std::cout << "Octagon's area = " << figure->Square() << std::endl;
+                        //std::cout << "Octagon's area = " << figure->Square() << std::endl;
                         break;
                     }
                     default: {

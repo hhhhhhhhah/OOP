@@ -5,7 +5,7 @@
 #include <cstdlib>
 #include <iostream>
 
-class Triangle: Figure {
+class Triangle: public Figure {
 public:
     Triangle();
     Triangle(size_t i,size_t j,size_t k);

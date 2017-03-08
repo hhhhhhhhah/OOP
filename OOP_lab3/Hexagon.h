@@ -9,7 +9,7 @@
 #include <cstdlib>
 #include <iostream>
 
-class Hexagon: Figure {
+class Hexagon: public Figure {
 
 public:
 
