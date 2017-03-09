@@ -1,6 +1,3 @@
-//
-// Created by ayy on 2/18/17.
-//
 
 #ifndef OOP_LAB2_NTREE_H
 #define OOP_LAB2_NTREE_H

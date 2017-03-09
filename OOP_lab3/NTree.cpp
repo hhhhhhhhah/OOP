@@ -1,6 +1,3 @@
-//
-// Created by ayy on 2/18/17.
-//
 
 #include "NTree.h"
 

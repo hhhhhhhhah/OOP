@@ -1,6 +1,3 @@
-//
-// Created by ayy on 11/8/16.
-//
 
 #ifndef HEXAGON_H
 #define HEXAGON_H

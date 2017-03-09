@@ -1,6 +1,3 @@
-//
-// Created by ayy on 2/18/17.
-//
 
 #ifndef OOP_LAB2_NTREENODE_H
 #define OOP_LAB2_NTREENODE_H
@@ -22,7 +19,7 @@ public:
     void SetSibling(std::shared_ptr<NTreeNode> sibling);
     void SetFigure(std::shared_ptr<Figure> figure);
 
-    std::shared_ptr<Figure> GetFigure() const;
+    std::shared_ptr<Figure> GetFigure() const ;
 
     virtual ~NTreeNode();
 

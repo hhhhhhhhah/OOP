@@ -21,6 +21,7 @@ int main(int argc, char** argv) {
 
         switch (number) {
             case 1: {
+                std::cout << "Adding new figure." << std::endl;
                 std::cout << "Enter path: ";
                 std::cin >> path;
                 std::cout << "Enter type of figure (1 - triangle, 2 - hexagon, 3 - octagon): ";
@@ -33,7 +34,7 @@ int main(int argc, char** argv) {
                         std::cin >> a >> b >> c;
                         std::shared_ptr<Figure> figure(new Triangle(a, b, c));
                         nTree.AddNode(figure, path);
-                        //std::cout << "Triangle's area = " << figure->Square() << std::endl;
+                        std::cout << "Triangle's area = " << figure->Square() << std::endl;
                         break;
                     }
                     case 2: {
@@ -42,7 +43,7 @@ int main(int argc, char** argv) {
                         std::cin >> a;
                         std::shared_ptr<Figure> figure(new Hexagon(a));
                         nTree.AddNode(figure, path);
-                        //std::cout << "Hexagon's area = " << figure->Square() << std::endl;
+                        std::cout << "Hexagon's area = " << figure->Square() << std::endl;
                         break;
                     }
                     case 3: {
@@ -51,7 +52,7 @@ int main(int argc, char** argv) {
                         std::cin >> a;
                         std::shared_ptr<Figure> figure(new Octagon(a));
                         nTree.AddNode(figure, path);
-                        //std::cout << "Octagon's area = " << figure->Square() << std::endl;
+                        std::cout << "Octagon's area = " << figure->Square() << std::endl;
                         break;
                     }
                     default: {
@@ -59,6 +60,7 @@ int main(int argc, char** argv) {
                         break;
                     }
                 }
+                break;
             }
             case 2: {
                 std::cout << "Enter path: ";
@@ -82,8 +84,8 @@ int main(int argc, char** argv) {
                 break;
             }
             case 4: {
-                if (nTree.empty()) std::cout << "Tree is empty.";
-                else std::cout << "Tree is not empty.";
+                if (nTree.empty()) std::cout << "The tree is empty.\n";
+                else std::cout << "The tree is not empty.\n";
                 break;
             }
             case 5: {

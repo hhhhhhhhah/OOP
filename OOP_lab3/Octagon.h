@@ -1,6 +1,3 @@
-//
-// Created by Filipp on 2/23/2017.
-//
 
 #ifndef OCTAGON_H
 #define OCTAGON_H

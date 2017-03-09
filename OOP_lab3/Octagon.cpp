@@ -23,3 +23,7 @@ Octagon& Octagon::operator=(const Octagon& right){
 double Octagon::Square() {
     return (2*(1+sqrt(2))*side*side);
 }
+
+Octagon::~Octagon(){
+    std::cout << "Octagon deleted" << std::endl;
+}
