@@ -31,7 +31,7 @@ void NTreeNode::SetFigure(std::shared_ptr<Figure> figure) {
     this->figure = figure;
 }
 std::shared_ptr<Figure> NTreeNode::GetFigure() const {
-    return figure;
+    return this->figure;
 }
 
 
@@ -43,7 +43,7 @@ void NTreeNode::print(int indent) {
     for (int i = 0; i < indent; ++i) {
         std::cout << "-";
     }
-    std::cout << this->figure << std::endl;
+    this->GetFigure()->Print();
     if (this->GetChild() != nullptr)
         this->GetChild()->print(indent + 1);
     if (this->GetSibling() != nullptr)

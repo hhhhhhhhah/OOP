@@ -16,6 +16,7 @@ public:
 
     //Hexagon& operator++();
     double Square();
+    void Print();
 
     //friend Hexagon operator+(const Hexagon& left,const Hexagon& right);
     friend std::ostream& operator<<(std::ostream& os, const Hexagon& obj);

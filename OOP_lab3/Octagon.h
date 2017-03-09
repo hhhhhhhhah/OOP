@@ -12,6 +12,7 @@ public:
     Octagon(size_t i);
     Octagon(const Octagon& orig);
     double Square();
+    void Print();
     friend std::ostream operator<<(std::ostream os, const Octagon obj);
     Octagon&operator=(const Octagon& right);
     virtual ~Octagon();

@@ -20,6 +20,10 @@ double Hexagon::Square(){
     return ((3.0 * sqrt(3.0) * side * side )/ 2.0);
 }
 
+void Hexagon::Print() {
+    std::cout << "Hexagon: side = " << this->side << std::endl;
+}
+
 Hexagon& Hexagon::operator=(const Hexagon& right) {
     if (this == &right) return *this;
     std::cout << "Hexagon copied" << std::endl;

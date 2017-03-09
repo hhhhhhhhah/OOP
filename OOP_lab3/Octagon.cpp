@@ -24,6 +24,10 @@ double Octagon::Square() {
     return (2*(1+sqrt(2))*side*side);
 }
 
+void Octagon::Print() {
+    std::cout << "Octagon: side = " << this->side << std::endl;
+}
+
 Octagon::~Octagon(){
     std::cout << "Octagon deleted" << std::endl;
 }

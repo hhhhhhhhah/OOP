@@ -11,6 +11,7 @@ public:
     Triangle(size_t i,size_t j,size_t k);
     Triangle(const Triangle& orig);
     double Square();
+    void Print();
     friend std::ostream& operator<<(std::ostream& os, const Triangle& obj);
     Triangle& operator=(const Triangle& right);
 

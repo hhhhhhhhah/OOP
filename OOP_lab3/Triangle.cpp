@@ -21,6 +21,9 @@ double Triangle::Square() {
     double p = (side_a + side_b + side_c)/2.0;
     return sqrt(p * (p-side_a) * (p-side_b) * (p-side_c));
 }
+void Triangle::Print() {
+    std::cout << "Triangle: side_a = " << this->side_a << "side_b = " << this->side_b << "side_c = " << this->side_c << std::endl;
+}
 
 Triangle& Triangle::operator=(const Triangle& right) {
     if (this == &right) return *this;

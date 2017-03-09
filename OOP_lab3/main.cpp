@@ -67,11 +67,8 @@ int main(int argc, char** argv) {
                 std::cin >> path;
                 node = nTree.FindNode(path);
                 if (node != nullptr) {
-                    //Hexagon hexagon(node->GetFigure());
-                    std::cout << node->GetChild() << std::endl;
-                    std::cout << "Figure's area = " << node->GetChild()->GetFigure()->Square() << std::endl;
-                    //std::cout << hexagon << std::endl;
-                    //std::cout << "Hexagon's area = " << hexagon.Square() << std::endl;
+                    node->GetFigure()->Print();
+                    std::cout << "Figure's area = " << node->GetFigure()->Square() << std::endl;
                 } else {
                     std::cout << "Wrong path." << std::endl;
                 }
