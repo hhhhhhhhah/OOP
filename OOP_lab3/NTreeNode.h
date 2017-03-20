@@ -25,7 +25,7 @@ public:
 
 private:
     std::shared_ptr<Figure> figure;
-    std::shared_ptr<NTreeNode> parent;
+    //std::shared_ptr<NTreeNode> parent;
     std::shared_ptr<NTreeNode> child;
     std::shared_ptr<NTreeNode> sibling;
 };

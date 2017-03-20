@@ -5,15 +5,15 @@ NTreeNode::NTreeNode(const std::shared_ptr<Figure>& figure) {
     this->figure = figure;
     this->child = nullptr;
     this->sibling = nullptr;
-    this->parent = nullptr;
+    //this->parent = nullptr;
 }
 
 std::shared_ptr<NTreeNode> NTreeNode::GetChild() {
     return this->child;
 }
-std::shared_ptr<NTreeNode> NTreeNode::GetParent() {
-    return this->parent;
-}
+//std::shared_ptr<NTreeNode> NTreeNode::GetParent() {
+//    return this->parent;
+//}
 std::shared_ptr<NTreeNode> NTreeNode::GetSibling() {
     return this->sibling;
 }
@@ -21,9 +21,9 @@ std::shared_ptr<NTreeNode> NTreeNode::GetSibling() {
 void NTreeNode::SetChild(std::shared_ptr<NTreeNode> child) {
     this->child = child;
 }
-void NTreeNode::SetParent(std::shared_ptr<NTreeNode> parent) {
-    this->parent = parent;
-}
+//void NTreeNode::SetParent(std::shared_ptr<NTreeNode> parent) {
+//    this->parent = parent;
+//}
 void NTreeNode::SetSibling(std::shared_ptr<NTreeNode> sibling) {
     this->sibling = sibling;
 }
@@ -36,7 +36,7 @@ std::shared_ptr<Figure> NTreeNode::GetFigure() const {
 
 
 NTreeNode::~NTreeNode() {
-    sibling = nullptr;
+    std::cout << "Node deleted\n";
 }
 
 void NTreeNode::print(int indent) {
